@@ -21,4 +21,5 @@ RUN apt-get update && apt-get install -y \
 	&& npm install -g csslint \
 	&& npm install -g eslint \
 	&& npm install -g jshint \
-	&& npm install -g stylint
+	&& npm install -g stylint \
+	&& npm install -g yarn
