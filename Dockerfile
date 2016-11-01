@@ -1,8 +1,15 @@
-FROM node:latest
+FROM node:6.9
+
 MAINTAINER "Gary Smith" <docker@kc.gs>
 
-RUN apt-get update && apt-get install -y \ 
-    libnotify-bin \
+WORKDIR /app
+
+RUN apt-get update \
+	&& apt-get install -y build-essential \
+	&& apt-get install -y libnotify-bin \
+	&& apt-get install -y notify-osd \
+	&& apt-get install -y php5-cli \
+
 	&& npm install -g forever \
 	&& npm install -g cordova \
 	&& npm install -g phonegap \
@@ -23,3 +30,7 @@ RUN apt-get update && apt-get install -y \
 	&& npm install -g jshint \
 	&& npm install -g stylint \
 	&& npm install -g yarn
+
+VOLUME ["/app"]
+CMD ["npm", "install"]
+
