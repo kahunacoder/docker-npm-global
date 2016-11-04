@@ -11,6 +11,7 @@ RUN apt-get update \
 	&& apt-get install -y php5-cli \
 
 	&& npm install -g forever \
+	&& npm install -g forever-monitor \
 	&& npm install -g cordova \
 	&& npm install -g phonegap \
 	&& npm install -g handlebars \
